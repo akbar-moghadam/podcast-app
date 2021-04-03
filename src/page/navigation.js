@@ -1,6 +1,6 @@
 import React from "react";
 import { Nav } from "../data/nav";
-import { NavLink } from "react-router-dom";
+import { NavLink,Link } from "react-router-dom";
 import {ImBook,ImSearch} from 'react-icons/im';
 import {FaBars} from 'react-icons/fa';
 import '../css/nav.scss';
@@ -23,7 +23,7 @@ function navigation() {
           })}
         </ul>
       </nav>
-      <div className="brand"><ImBook/></div>
+      <div className="brand"><ImBook/><Link to="#"><span>Podcast</span></Link></div>
     </div>
   );
 }
