@@ -4,6 +4,6 @@ export const Nav=[
     {to:"از کجا بخریم",link:"/weherbuy"},
     {to:"پشتیبانی",link:"/backup"},
     {to:"خبرنامه",link:"/newsletters"},
-    {to:"درباره ما",link:"/abaut"}
+    {to:"درباره ما",link:"/about"}
 
 ] 
