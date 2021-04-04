@@ -1,31 +1,33 @@
 @import "color";
+@import "media";
+
 
 * {
   padding: 0;
   margin: 0;
 }
 
-%dispay-flex {
+%display-flex {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
 }
 .nav {
-  @extend %dispay-flex;
+  @extend %display-flex;
   justify-content: space-around;
   width: 100vw;
   height: 18vh;
   background: gainsboro;
 
   .nav-list {
-    @extend %dispay-flex;
+    @extend %display-flex;
     width: 60%;
     height: 50%;
     
 
     ul {
-      @extend %dispay-flex;
+      @extend %display-flex;
       list-style-type: none;
       flex-direction: row-reverse;
       width: 70%;
@@ -46,7 +48,7 @@
       font-weight: 500;
     }
     .search{
-        @extend %dispay-flex;
+        @extend %display-flex;
         width: 30%;
         height: 100%;
         

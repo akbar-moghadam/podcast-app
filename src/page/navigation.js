@@ -1,13 +1,14 @@
-import React from "react";
+import React,{useState} from "react";
 import { Nav } from "../data/nav";
 import { NavLink,Link } from "react-router-dom";
 import {ImBook,ImSearch} from 'react-icons/im';
 import {FaBars} from 'react-icons/fa';
 import '../css/nav.scss';
 function navigation() {
+  const [Bar, setBar] = useState(false);
   return (
     <div className="nav">
-        <FaBars/>
+        <FaBars />
        
       <nav className="nav-list">
       <form action="" className="search">
