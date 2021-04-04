@@ -1,23 +1,85 @@
-@import 'color';
+@import "color";
 
-*{
-    padding: 0;
-    margin: 0;
+* {
+  padding: 0;
+  margin: 0;
 }
 
-%dispay-flex{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;  
+%dispay-flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
-.nav{
-   @extend %dispay-flex;
-   justify-content: space-around;
-   width: 100vw;
-   height: 18vh;
-background: gainsboro;
-    ul{
+.nav {
+  @extend %dispay-flex;
+  justify-content: space-around;
+  width: 100vw;
+  height: 18vh;
+  background: gainsboro;
 
+  .nav-list {
+    @extend %dispay-flex;
+    width: 60%;
+    height: 50%;
+    
+
+    ul {
+      @extend %dispay-flex;
+      list-style-type: none;
+      flex-direction: row-reverse;
+      width: 70%;
+      height: 100%;
+      li {
+        padding: 10px;
+        margin: 10px;
+       
+        
+
+      }
     }
+
+    .navlink {
+      text-decoration: none;
+      color: $sormei;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    .search{
+        @extend %dispay-flex;
+        width: 30%;
+        height: 100%;
+        
+        input{
+            width: 50%;
+            font-size: 16px;
+            color: $sormei;
+            padding: 5px;
+            margin: 10px;
+            border-radius: 10px;
+            border:none;
+        }
+        span{
+            font-size: 16px;
+        }
+    }
+  }
+
+  .brand {
+    .link {
+      text-decoration: none;
+      padding: 10px;
+      color: $sormei;
+    }
+    span {
+      font-size: 25px;
+      font-weight: 500;
+      color: $sormei;
+    }
+    .brand-icon {
+      font-size: 35px;
+      font-weight: 400;
+      color: $zard;
+    }
+  }
 }
