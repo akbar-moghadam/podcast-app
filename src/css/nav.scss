@@ -1,7 +1,6 @@
 @import "color";
 @import "media";
 
-
 * {
   padding: 0;
   margin: 0;
@@ -14,142 +13,176 @@
   justify-content: center;
 }
 
-%mobile-desktop{
-@extend %display-flex;
-flex-direction: column;
-justify-content: flex-start;
-width: 30%;
-height:400%;
-padding: 0.5rem;
-margin: 0.5rem;
-position: absolute;
-top:0;
-left:-40rem;
-box-shadow: 1px 1px 3px 2px $khakestari,5px 5px 15px 3px $khakestari;
-
+%mobile-desktop {
+  @extend %display-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 40%;
+  height: 25rem;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  position: absolute;
+  top: 0;
+  left: -50rem;
+  box-shadow: 1px 1px 3px 2px $khakestari, 5px 5px 15px 3px $khakestari;
 }
 .nav {
   @extend %display-flex;
   justify-content: space-around;
   width: 100vw;
   height: 18vh;
-  background: gainsboro;
+  background: rgb(230, 228, 228);
   position: relative;
   transition: all 0.5s ease-in-out;
-  
+  overflow: hidden;
+
   .navlink {
     text-decoration: none;
     color: $sormei;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 500;
+    padding: 5px;
+    margin: 5px;
+    transition: all 0.1s ease-in;
+    &:hover {
+      color: $sormei;
+      border-color: $sormei;
+      border-bottom: 2px solid $sormei;
+      @include tablet{
+        &:hover{
+          border-right: 2px solid $sormei;
+          box-shadow: 1px 1px 2px 2px $khakestari,
+          3px 3px 4px $khakestari;
+        }
+        
+      }
+
+    }
   }
-  .fbars{
+  .fbars {
     cursor: pointer;
     position: absolute;
     left: -5rem;
-    @include tablet{
-      left:2rem;
+    @include tablet {
+      left: 2rem;
     }
-
-    
   }
   .nav-list {
     @extend %display-flex;
-    width: 60%;
+    width: 70%;
     height: 50%;
     position: relative;
-    @include tablet{
-      left:-25rem;
+    overflow: hidden;
+    @include tablet {
+      left: -45rem;
     }
-    
 
     .nav-item {
       @extend %display-flex;
-      
+
       flex-direction: row-reverse;
-      width: 70%;
+      width: 80%;
       height: 100%;
-      ul{
+      padding: 10px;
+      margin: 10px;
+      ul {
         list-style-type: none;
+        padding: 5px;
+        margin: 5px;
       }
       li {
-        padding: 10px;
-        margin: 10px;
-         }
+        padding: 5px;
+        margin: 5px;
+      }
     }
 
-   
-    .search{
-        @extend %display-flex;
-        width: 30%;
-        height: 100%;
-        
-        input{
-            width: 50%;
-            font-size: 16px;
-            color: $sormei;
-            padding: 5px;
-            margin: 10px;
-            border-radius: 10px;
-            border:none;
-        }
-        span{
-            font-size: 16px;
-        }
+    .search {
+      @extend %display-flex;
+      width: 20%;
+      height: 100%;
+
+      input {
+        width: 50%;
+        font-size: 16px;
+        color: $sormei;
+        padding: 5px;
+        margin: 10px;
+        border-radius: 10px;
+        border: none;
+      }
+      span {
+        font-size: 16px;
+      }
     }
   }
 
   .brand {
     @extend %display-flex;
+    overflow: hidden;
     .link {
       text-decoration: none;
       padding: 10px;
       color: $sormei;
     }
     span {
-      font-size: 25px;
+      font-size: 30px;
       font-weight: 500;
       color: $sormei;
+      transition: all 1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+      @include tablet {
+        font-size: 20px;
+        font-weight: 400;
+      }
     }
     .brand-icon {
       font-size: 40px;
       font-weight: 400;
       color: $zard;
+      transition: all 1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+      @include tablet {
+        font-size: 30px;
+        font-weight: 400;
+      }
     }
   }
 
- 
-    .mobile{
-      @extend %mobile-desktop;
-      @include tablet{
-        left: 0;
-        z-index: 2;
-        background: chocolate;
+  .mobile {
+    @extend %mobile-desktop;
+    overflow: hidden;
+    @include tablet {
+      left: 0;
+      z-index: 2;
+      background: $zard;
+    }
+    .mobile-nav-items {
+      @extend %display-flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      ul {
+        list-style: none;
+        padding-top: 5px;
       }
-     .mobile-nav-items{
-       @extend %display-flex;
-       flex-direction: column;
-       width: 100%;
-       ul{
-         list-style: none;
-         padding-top:5px;
-       }
-       li {
+      li {
         padding: 10px;
         text-decoration: none;
-         }
-     }
-      
+      }
     }
-    .desktop{
-      @extend %mobile-desktop;
-      
-        left: -40rem;   
-      
+  }
+  .close {
+    cursor: pointer;
+    padding: 5px;
+    font-size: 30px;
+    color: $sormei;
+    position: absolute;
+    &:hover{
+      font-size: 40px;
+    color: $sefid;
     }
-    .close{
-      cursor: pointer;
-    }
-  
- 
+  }
+  .desktop {
+    @extend %mobile-desktop;
+
+    left: -150rem;
+  }
 }
