@@ -13,40 +13,72 @@
   align-items: center;
   justify-content: center;
 }
+
+%mobile-desktop{
+@extend %display-flex;
+flex-direction: column;
+justify-content: flex-start;
+width: 30%;
+height:400%;
+padding: 0.5rem;
+margin: 0.5rem;
+position: absolute;
+top:0;
+left:-40rem;
+box-shadow: 1px 1px 3px 2px $khakestari,5px 5px 15px 3px $khakestari;
+
+}
 .nav {
   @extend %display-flex;
   justify-content: space-around;
   width: 100vw;
   height: 18vh;
   background: gainsboro;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+  
+  .navlink {
+    text-decoration: none;
+    color: $sormei;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .fbars{
+    cursor: pointer;
+    position: absolute;
+    left: -5rem;
+    @include tablet{
+      left:2rem;
+    }
 
+    
+  }
   .nav-list {
     @extend %display-flex;
     width: 60%;
     height: 50%;
+    position: relative;
+    @include tablet{
+      left:-25rem;
+    }
     
 
-    ul {
+    .nav-item {
       @extend %display-flex;
-      list-style-type: none;
+      
       flex-direction: row-reverse;
       width: 70%;
       height: 100%;
+      ul{
+        list-style-type: none;
+      }
       li {
         padding: 10px;
         margin: 10px;
-       
-        
-
-      }
+         }
     }
 
-    .navlink {
-      text-decoration: none;
-      color: $sormei;
-      font-size: 16px;
-      font-weight: 500;
-    }
+   
     .search{
         @extend %display-flex;
         width: 30%;
@@ -68,6 +100,7 @@
   }
 
   .brand {
+    @extend %display-flex;
     .link {
       text-decoration: none;
       padding: 10px;
@@ -79,9 +112,44 @@
       color: $sormei;
     }
     .brand-icon {
-      font-size: 35px;
+      font-size: 40px;
       font-weight: 400;
       color: $zard;
     }
   }
+
+ 
+    .mobile{
+      @extend %mobile-desktop;
+      @include tablet{
+        left: 0;
+        z-index: 2;
+        background: chocolate;
+      }
+     .mobile-nav-items{
+       @extend %display-flex;
+       flex-direction: column;
+       width: 100%;
+       ul{
+         list-style: none;
+         padding-top:5px;
+       }
+       li {
+        padding: 10px;
+        text-decoration: none;
+         }
+     }
+      
+    }
+    .desktop{
+      @extend %mobile-desktop;
+      
+        left: -40rem;   
+      
+    }
+    .close{
+      cursor: pointer;
+    }
+  
+ 
 }
