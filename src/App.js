@@ -12,7 +12,9 @@ import About from './page/About'
 function App() {
   return (
     <BrowserRouter>
-    
+      <div className="main">
+
+      
        <Navigation/>
       <Switch>
             <Route path="/" exact component={Home}/>
@@ -25,7 +27,7 @@ function App() {
             
             
       </Switch>
-     
+      </div>
     </BrowserRouter>
     
   );
