@@ -2,8 +2,25 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../css/home.scss";
 import Products from "../data/products.json";
+import {ImBookmarks} from 'react-icons/im'
 
 function Home() {
+
+  const items=Products.filter((item) => {
+    if (item.new === "yes") {
+      return item;
+    }
+  }).map((item, index) => {
+    return (
+      <div  className="head-item" key={index}>
+        <span>{item.id}</span>
+        <span>{item.title}</span>
+        <h3>{item.by}</h3>
+        <span><ImBookmarks/></span>
+      </div>
+    );
+  })
+
   return (
     <div className="main-container">
       <div className="buy">
@@ -18,19 +35,7 @@ function Home() {
         <div className="detail"></div>
         <div className="bold-items">
           <div className="items">
-            {Products.filter((item) => {
-              if (item.new === "yes") {
-                return item;
-              }
-            }).map((item, index) => {
-              return (
-                <div key={index}>
-                  <span>{item.title}</span>
-
-                  <span></span>
-                </div>
-              );
-            })}
+            {items}
           </div>
         </div>
       </div>
