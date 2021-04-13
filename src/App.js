@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import {BrowserRouter,Switch,Route} from 'react-router-dom';
 import Home from './page/Home';
-import Navigation from './page/navigation';
+import Nav from './page/Nav';
 import All from './page/All'
 import Weblog from './page/Weblog'
 import Weherbuy from './page/Weherbuy'
@@ -15,9 +15,10 @@ function App() {
       <div className="main">
 
       
-       <Navigation/>
+       <Nav/>
+       
       <Switch>
-            <Route path="/" exact component={Home}/>
+            <Route path="/" exact><Home/></Route>
             <Route path="/all"> <All/> </Route>
             <Route path="/weblog"> <Weblog/> </Route>
             <Route path="/weherbuy"> <Weherbuy/> </Route>

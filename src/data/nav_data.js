@@ -1,4 +1,4 @@
-export const Nav=[
+export const Nav_data=[
     {to:"همه اپیزودها",link:"/all"},
     {to:"وبلاگ بی پلاس",link:"/weblog"},
     {to:"از کجا بخریم",link:"/weherbuy"},

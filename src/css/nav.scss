@@ -4,6 +4,7 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 %display-flex {
@@ -13,28 +14,18 @@
   justify-content: center;
 }
 
-%mobile-desktop {
-  @extend %display-flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  width: 40%;
-  height: 25rem;
-  padding: 0.5rem;
-  margin: 0.5rem;
-  position: absolute;
-  top: 0;
-  left: -50rem;
-  box-shadow: 1px 1px 3px 2px $khakestari, 5px 5px 15px 3px $khakestari;
-}
+
 .nav {
   @extend %display-flex;
   justify-content: space-around;
   width: 100vw;
-  height: 18vh;
+  height: 8rem;
   background: rgb(230, 228, 228);
   position: relative;
   transition: all 0.5s ease-in-out;
   overflow: hidden;
+  z-index: 2;
+  
 
   .navlink {
     text-decoration: none;
@@ -146,43 +137,17 @@
     }
   }
 
-  .mobile {
-    @extend %mobile-desktop;
-    overflow: hidden;
-    @include tablet {
-      left: 0;
-      z-index: 2;
-      background: $zard;
-    }
-    .mobile-nav-items {
-      @extend %display-flex;
-      flex-direction: column;
-      width: 100%;
-      height: 100%;
-      ul {
-        list-style: none;
-        padding-top: 5px;
-      }
-      li {
-        padding: 10px;
-        text-decoration: none;
-      }
-    }
+  .mobile{
+   
+    background: cadetblue;
+    position: relative;
+    z-index: 50;
+    height: 20rem;
   }
-  .close {
-    cursor: pointer;
-    padding: 5px;
-    font-size: 30px;
-    color: $sormei;
-    position: absolute;
-    &:hover{
-      font-size: 40px;
-    color: $sefid;
-    }
-  }
-  .desktop {
-    @extend %mobile-desktop;
-
-    left: -150rem;
+  .khas{
+    position: relative;
+    height: 15rem;
+    width: 5rem;
+    background: burlywood;
   }
 }
